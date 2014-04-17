@@ -1,0 +1,44 @@
+
+[col-size] == ::window[width] / 6 !require; 
+
+#container[height] ==[col-size] * 2;
+
+#first {
+	background: red;
+
+	width: == ::parent[height];
+	height: == ::[width];
+
+	::[top] == ::window[top] + 50 !strong;
+	::[left] == ::window[left] + 50 !strong;
+}
+
+#second {
+	background: green;
+
+	width: == #first[width] / 1.618;
+	height: == ::[width];
+
+	::[left] == #first[right];
+	::[top] == #first[top];
+}
+
+#third {
+	background: blue;
+	
+	width: == #second[width] / 1.618;
+	height: == ::[width];
+
+	::[right] == #second[right];
+	::[top] == #second[bottom];
+}
+
+#fourth {
+	background: magenta;
+	
+	width: == #third[width] / 1.618;
+	height: == ::[width];
+
+	::[right] == #third[left];
+	::[bottom] == #third[bottom];
+}
