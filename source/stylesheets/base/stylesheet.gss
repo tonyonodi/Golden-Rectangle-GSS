@@ -5,7 +5,8 @@
 	::[center-x] == ::window[center-x] !strong;
 	::[center-y] == ::window[center-y] !strong;
 	width: == #first[width] + #second[width];
-	::[height] == ::window[height] * 0.9;
+	::[height] <= ::window[height] * 0.9 !require;
+	::[width] <= ::window[width] * 0.9 !require;
 }
 
 #first {
