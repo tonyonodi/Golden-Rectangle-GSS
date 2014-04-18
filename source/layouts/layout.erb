@@ -16,15 +16,14 @@
     <%= yield %>
   </body>
 
-  <%= javascript_include_tag  "all" %>
   <script>
-  GSS_CONFIG = {
-    worker: "app/bower_components/gss/dist/worker.js",
-    debug: true,
-    fractionalPixels: true
-  }
-</script>
-<script src="app/bower_components/gss/dist/gss.js"></script>
-<link rel="stylesheet" type="text/gss" href="stylesheets/base/stylesheet.gss"></link>
+    GSS_CONFIG = {
+      worker: "javascripts/worker.js",
+      debug: true,
+      fractionalPixels: true
+    }
+  </script>
+  <%= javascript_include_tag  "gss" %>
+  <link rel="stylesheet" type="text/gss" href="stylesheets/base/stylesheet.gss"></link>
 
 </html>
