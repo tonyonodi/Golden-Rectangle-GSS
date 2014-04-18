@@ -1,7 +1,12 @@
 
 [col-size] == ::window[width] / 6 !require; 
 
-#container[height] ==[col-size] * 2;
+#container{
+	::[center-x] == ::window[center-x] !strong;
+	::[center-y] == ::window[center-y] !strong;
+	width: == #first[width] + #second[width];
+	::[height] == ::window[height] * 0.9;
+}
 
 #first {
 	background: red;
@@ -9,8 +14,8 @@
 	width: == ::parent[height];
 	height: == ::[width];
 
-	::[top] == ::window[top] + 50 !strong;
-	::[left] == ::window[left] + 50 !strong;
+	::[top] == #container[top] ;
+	::[left] == #container[left] ;
 }
 
 #second {
@@ -41,4 +46,22 @@
 
 	::[right] == #third[left];
 	::[bottom] == #third[bottom];
+}
+
+#fifth {
+	background: orange;
+	
+	height: == #fourth[width] / 1.618;
+
+	::[left] == #fourth[left] !strong;
+	::[bottom] == #fourth[top] !strong;
+	::[right] == #fourth[right] !strong;
+
+	h1 {
+		color: white;
+		height: == ::[intrinsic-height] !strong;
+		width: == ::[intrinsic-width] !strong;
+		::[center-x] == #fifth[center-x];
+		::[center-y] == #fifth[center-y];
+	}
 }
